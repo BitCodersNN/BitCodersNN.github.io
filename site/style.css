@@ -1,0 +1,546 @@
+@font-face {
+    font-family: mu;
+    src: url(./font/MullerRegular.ttf);
+}
+
+@font-face {
+    font-family: mu_light;
+    src: url(./font/MullerLight.ttf);
+}
+
+@font-face {
+    font-family: mu_thin;
+    src: url(./font/MullerUltraLight.ttf);
+}
+
+@font-face {
+    font-family: sas;
+    src: url(cruinn/Cruinn\ Bold.ttf);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#page1 {
+    height: 100vh;
+    width: 100%;
+    background-color: #dadada;
+    position: relative;
+}
+
+#page1 video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+#page1-content {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+nav {
+    font-family: mu;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 3vw 4.5vw 3vw 3vw;
+}
+
+nav h3 {
+    font-size: 1.8vw;
+    font-weight: 100;
+}
+
+nav h4 {
+    font-size: 1.8vw;
+    font-weight: 100;
+}
+
+#page1-content h1 {
+    font-family: sas;
+    font-size: 20.5vw;
+    line-height: 19vw;
+}
+
+
+#cursor {
+    height: 7.5vw;
+    width: 7.5vw;
+    background-color: #ffffff;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+
+}
+
+.hover-this:hover~.cursor {
+    transform: translate(-50%, -50%) scale(8);
+}
+
+#page2 {
+    height: 120vh;
+    width: 100%;
+    background-color: #151517;
+
+    background-size: cover;
+    background-position: center;
+}
+
+hr {
+    width: 91%;
+    height: 0.1px;
+
+    background-color: #fff;
+
+    margin-left: 4.4vw;
+
+}
+
+#page2-content {
+    height: 100%;
+    width: 100%;
+
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+
+
+}
+
+.elem {
+    font-size: 22px;
+    padding: 3vw;
+    line-height: 1.5;
+    flex-shrink: 0;
+    max-width: 55%;
+
+}
+
+
+.n2 {
+    font-size: 1.8vw;
+    margin-top: 10vw;
+    font-family: mu_thin;
+    display: flex;
+    align-items: flex-start;
+
+    justify-content: space-between;
+    width: 100%;
+    padding: 3vw 3vw;
+}
+
+.n3 {
+    font-size: 1.8vw;
+
+    font-family: mu_thin;
+
+    display: flex;
+    align-items: flex-start;
+
+    justify-content: space-between;
+    width: 100%;
+    padding: 3vw 3vw;
+}
+
+.rectangle {
+    background-color: #fff;
+    width: 100%;
+    height: 3vw;
+    margin-bottom: 50px;
+
+}
+
+#page3-content {
+    height: 100%;
+    width: 100%;
+
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+#marqueeContainer {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    height: 5vw;
+
+    background-color: #6e7dc700;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+}
+
+#marquee {
+
+    display: inline-block;
+    white-space: nowrap;
+    padding-top: 1vw;
+    padding-left: 100%;
+    animation: marquee 40s linear infinite;
+
+    color: rgb(255, 255, 255);
+    font-family: Cruinn;
+    font-weight: 300;
+
+    text-align: center;
+}
+
+@keyframes marquee {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-100%, 0);
+    }
+}
+
+#page3 {
+    position: relative;
+    height: 125vh;
+    width: 100%;
+    background-color: #151517;
+
+
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+#page3 .skill {
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    z-index: 3;
+    font-family: sas;
+    transition: transform 0.5s;
+    display: inline-block;
+    margin: 5px;
+    padding-top: 10px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.106);
+    border-radius: 40px;
+}
+
+
+#page3 #skill-dart {
+    top: 50vh;
+    left: 50vw;
+}
+
+#page3 #skill-figma  {
+    top: 100vh;
+    left: 49vw;
+}
+
+#page3 #skill-firebase {
+    top: 91vh;
+    left: 27vw;
+}
+
+#page3 #skill-typescript {
+    top: 76vh;
+    left: 55vw;
+}
+
+#page3 #skill-html {
+    top: 60vh;
+    left: 21vw;
+}
+
+#page3 #skill-css {
+    top: 87vh;
+    left: 72vw;
+}
+
+#page3 #skill-js {
+    top: 39vh;
+    left: 32vw;
+}
+
+#page3 #skill-python {
+    top: 34vh;
+    left: 55vw;
+}
+
+#page3 #skill-github {
+    top: 52vh;
+    left: 65vw;
+}
+
+#page3 #skill-flutter {
+    top: 65vh;
+    left: 36vw;
+}
+
+#page3 #skill-git{
+    top: 81vh;
+    left: 43vw;
+}
+
+.ball {
+    margin-top: 50px;
+    max-width: 180%;
+    filter: hue-rotate(255deg) brightness(90%);
+
+
+}
+
+.skill-group {
+    transition: transform 0.1s;
+    transform-origin: center;
+
+}
+
+#page4 {
+    height: 180vh;
+    width: 100%;
+    background-color: #151517;
+
+
+}
+
+#page4-content {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    color: #fff;
+
+}
+
+.e2 {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+}
+
+#page5 {
+    height: 130vh;
+    width: 100%;
+    background-color: #151517;
+
+    padding: 4vw 0;
+    position: relative;
+
+
+}
+
+#page6 {
+    height: 100vh;
+    width: 100%;
+    background-color: #151517;
+
+    padding: 4vw 0;
+    position: relative;
+}
+
+#page7 {
+    height: 135vh;
+    width: 100%;
+    background-color: #151517;
+
+    padding: 4vw 0;
+    position: relative;
+}
+
+#page8 {
+    height: 120vh;
+    width: 100%;
+    background-color: #151517;
+
+    padding: 4vw 0;
+    position: relative;
+
+}
+
+#page9 {
+    height: 100vh;
+    width: 100%;
+    background-color: #151517;
+
+    padding: 4vw 0;
+    position: relative;
+}
+
+#page10 {
+    height: 50vh;
+    width: 100%;
+    background-color: #151517;
+
+    padding: 4vw 0;
+    position: relative;
+}
+
+#page11 {
+    height: 170vh;
+    width: 100%;
+    background-color: #151517;
+
+    padding: 4vw 0;
+    position: relative;
+}
+
+#page12 {
+    height: 100vh;
+    width: 100%;
+    background-color: #151517;
+
+    padding: 4vw 0;
+    position: relative;
+}
+
+#page13 {
+    height: 130vh;
+    width: 100%;
+    background-color: #151517;
+
+    position: relative;
+}
+
+#page14 {
+    height: 2vh;
+    width: 100%;
+    background-color: #151517;
+
+    position: relative;
+}
+
+#custom-list li:before {
+    content: "";
+
+    display: inline-block;
+    width: 20px;
+
+    height: 20px;
+
+    background-image: url('images/icons/Icon.png');
+
+    background-size: cover;
+    margin-right: 10px;
+
+}
+#custom-list li {
+    margin-bottom: 15px;
+}
+#custom-list2 li {
+    margin-bottom: 15px;
+}
+#custom-list2 li:before {
+    content: "";
+
+    display: inline-block;
+    width: 20px;
+
+    height: 20px;
+
+    background-image: url('images/icons/Icon.png');
+
+    background-size: cover;
+    margin-right: 10px;
+}
+
+.photo-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 4.5vw;
+}
+
+.photo-card {
+
+    flex-basis: calc(33.33% - 9vw);
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.team-member-image {
+    width: 100%;
+    height: auto;
+    border-radius: 0px;
+}
+
+.name {
+    font-family: mu_light;
+    font-size: 22px;
+    margin-top: 20px;
+    color: #fff;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+}
+
+.social-icons {
+    display: flex;
+    margin-right: 20px;
+}
+
+.social-icons img {
+    width: 30px;
+    margin-right: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+
+#page13 h1 {
+    font-family: sas;
+    font-size: 20.5vw;
+    line-height: 19vw;
+    margin-left: 4.5vw;
+    color: transparent;
+    -webkit-text-stroke: 0.5px #ffffff;
+    margin-top: 6vw;
+}
+
