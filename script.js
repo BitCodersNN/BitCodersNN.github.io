@@ -28,34 +28,51 @@ document.addEventListener("DOMContentLoaded", function () {
     // Обновление ScrollTrigger при изменении размеров
     ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 
-    // Инициализация эффекта курсора
-    function cursorEffect() {
-        const page1Content = document.querySelector("#page1-content");
-        const cursor = document.querySelector("#cursor");
 
-        page1Content.addEventListener('mousemove', function (event) {
-            gsap.to(cursor, {
-                x: event.clientX,
-                y: event.clientY
-            });
-        });
-
-        page1Content.addEventListener("mouseenter", function () {
-            gsap.to(cursor, {
-                scale: 1,
-                opacity: 1
-            });
-        });
-
-        page1Content.addEventListener("mouseleave", function () {
-            gsap.to(cursor, {
-                scale: 0,
-                opacity: 0
-            });
+    
+    
+function cursorEffect() {
+    const page1Content = document.querySelector("#page1-content");
+    const cursor = document.querySelector("#cursor");
+  
+    function moveCursor(event) {
+        gsap.to(cursor, {
+            x: event.pageX,
+            y: event.pageY
         });
     }
 
-    cursorEffect();
+    window.addEventListener('scroll', function() {
+        moveCursor({
+            pageX: event.pageX,
+            pageY: event.pageY
+        });
+    });
+
+    page1Content.addEventListener('mousemove', moveCursor);
+
+    function showCursor() {
+        gsap.to(cursor, {
+            scale: 1,
+            opacity: 1
+        });
+    }
+
+    function hideCursor() {
+        gsap.to(cursor, {
+            scale: 0,
+            opacity: 0
+        });
+    }
+
+    page1Content.addEventListener("mouseenter", showCursor);
+    page1Content.addEventListener("mouseleave", hideCursor);
+
+    window.addEventListener('mouseenter', showCursor);
+    window.addEventListener('mouseleave', hideCursor);
+}
+
+cursorEffect();
 
     function page1Animation() {
         gsap.from("#page1-content h1", {
@@ -72,7 +89,9 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-    page1Animation()
+    page1Animation();
+
+   
 
 
     function page2Animation() {
