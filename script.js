@@ -32,24 +32,33 @@ document.addEventListener("DOMContentLoaded", function () {
     
     
 function cursorEffect() {
-    const page1Content = document.querySelector("#page1-content");
+    const overlay = document.querySelector("#overlay");
     const cursor = document.querySelector("#cursor");
-  
+    let scrollPos = {x: 0, y: 0}
+    let moveLast = {pageX: 0, pageY: 0};
+    
     function moveCursor(event) {
         gsap.to(cursor, {
-            x: event.pageX,
-            y: event.pageY
+            x: event.pageX + scrollPos.x,
+            y: event.pageY + scrollPos.y
         });
+        moveLast = event
     }
 
-    window.addEventListener('scroll', function() {
-        moveCursor({
-            pageX: event.pageX,
-            pageY: event.pageY
-        });
+    locoScroll.on('scroll', function(event) {
+        scrollPos = {
+            x: event.scroll.x,
+            y: event.scroll.y
+        }
+        moveCursor(moveLast)
+        if (moveLast.pageY + event.scroll.y > window.innerHeight ) {
+            hideCursor()
+        } else {
+            showCursor() 
+        }
     });
 
-    page1Content.addEventListener('mousemove', moveCursor);
+    overlay.addEventListener('mousemove', moveCursor);
 
     function showCursor() {
         gsap.to(cursor, {
@@ -65,11 +74,8 @@ function cursorEffect() {
         });
     }
 
-    page1Content.addEventListener("mouseenter", showCursor);
-    page1Content.addEventListener("mouseleave", hideCursor);
-
-    window.addEventListener('mouseenter', showCursor);
-    window.addEventListener('mouseleave', hideCursor);
+    overlay.addEventListener("mouseenter", showCursor);
+    overlay.addEventListener("mouseleave", hideCursor);
 }
 
 cursorEffect();
