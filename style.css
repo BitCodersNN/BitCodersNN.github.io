@@ -63,12 +63,11 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 98%; /* или другая ширина */
-  height: 98%; /* или другая высота */
+  width: 98%;
+  height: 98%;
   margin-top: 1%;
   margin-left:1%;
-  background-color: rgba(255, 255, 255, 0.8); /* полупрозрачный белый цвет, замените на нужный */
-  z-index: 9999; /* выберите необходимый уровень z-index, главное, чтобы он был выше других элементов */
+  z-index: 9999;
 }
 
 #page1 video {
