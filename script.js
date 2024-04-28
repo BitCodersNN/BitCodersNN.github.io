@@ -34,26 +34,27 @@ document.addEventListener("DOMContentLoaded", function () {
 function cursorEffect() {
     const overlay = document.querySelector("#overlay");
     const cursor = document.querySelector("#cursor");
-    let x_scroll = 0, y_scroll = 0;
+    let scrollPos = {x: 0, y: 0}
     let moveLast = {pageX: 0, pageY: 0};
     
     function moveCursor(event) {
         gsap.to(cursor, {
-            x: event.pageX + x_scroll,
-            y: event.pageY + y_scroll
+            x: event.pageX + scrollPos.x,
+            y: event.pageY + scrollPos.y
         });
         moveLast = event
     }
 
     locoScroll.on('scroll', function(event) {
-        x_scroll = event.scroll.x
-        y_scroll = event.scroll.y
+        scrollPos = {
+            x: event.scroll.x,
+            y: event.scroll.y
+        }
         moveCursor(moveLast)
-        if (moveLast.pageY +event.scroll.y > window.innerHeight ) {
+        if (moveLast.pageY + event.scroll.y > window.innerHeight ) {
             hideCursor()
         } else {
-            showCursor()
-            
+            showCursor() 
         }
     });
 
@@ -75,7 +76,6 @@ function cursorEffect() {
 
     overlay.addEventListener("mouseenter", showCursor);
     overlay.addEventListener("mouseleave", hideCursor);
-    
 }
 
 cursorEffect();
