@@ -328,20 +328,6 @@ cursorEffect();
 
     page12Animation();
 
-    const swiper = new Swiper(".mySwiper", {
-        slidesPerView: 1,
-        spaceBetween: 35,
-        loop: true,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-        navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-        }
-    });
-
 }
 );
 
@@ -392,14 +378,43 @@ wrapper.addEventListener('mousemove', handleParallax);
 wrapper.addEventListener('mouseout', reset);
 
 
-var swiper = new Swiper('.swiper-container', {
+var swiper_phone = new Swiper('#swiper-container-phone', {
     slidesPerView: 3,
     grabCursor: true,
     loop: true,
-    spaceBetween: 30,
 
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '#swiper-button-next-phone',
+        prevEl: '#swiper-button-prev-phone',
+    },
+     breakpoints: {
+        // если ширина экрана больше или равна 1024px
+        1200: {
+            slidesPerView: 3, // показывать 3 слайда
+            spaceBetween: 30 // большее расстояние между слайдами
+        },
+        // если ширина экрана больше или равна 768px, но меньше 1024px
+        800: {
+            slidesPerView: 2, // показывать 2 слайда
+            spaceBetween: 20 // среднее расстояние между слайдами
+        },
+        // если ширина экрана меньше 768px
+        0: {
+            slidesPerView: 1, // показывать 1 слайд
+            spaceBetween: 10 // минимальное расстояние между слайдами
+        }
+    }
+
+});
+
+
+var  swiper_laptop = new Swiper('#swiper-container-laptop', {
+    slidesPerView: 1,
+    loop: true,
+    spaceBetween: 100,
+
+    navigation: {
+        nextEl: '#swiper-button-next-laptop',
+        prevEl: '#swiper-button-prev-laptop',
     },
 });
