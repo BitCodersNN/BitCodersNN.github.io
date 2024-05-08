@@ -80,26 +80,6 @@ function cursorEffect() {
 
 cursorEffect();
 
-    function page1Animation() {
-        gsap.from("#page1-content h1", {
-            y: 20,
-            stagger: 0.9,
-            duration: 1,
-            scrollTrigger: {
-                trigger: "#page1",
-                scroller: "#main",
-                start: "top 17%",
-                end: "top 90%",
-                // markers: true,
-                scrub: 5
-            }
-        });
-    }
-    page1Animation();
-
-   
-
-
     function page2Animation() {
         gsap.from("#page2-content .elem", {
             y: 120,

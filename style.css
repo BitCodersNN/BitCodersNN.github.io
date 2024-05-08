@@ -253,8 +253,8 @@ hr {
     overflow: hidden;
     white-space: nowrap;
     box-sizing: border-box;
-    height: 5vw;
-
+    padding-bottom: 1vh;
+    padding-top: 1vh;
     background-color: #6e7dc700;
     border-top: 1px solid #ffffff;
     border-bottom: 1px solid #ffffff;
@@ -264,7 +264,6 @@ hr {
 
     display: inline-block;
     white-space: nowrap;
-    padding-top: 1vw;
     padding-left: 100%;
     animation: marquee 40s linear infinite;
 
@@ -586,8 +585,7 @@ hr {
     margin-bottom: 10px;
 }
 
-
-#page13 h1 {
+#ending_name {
     font-family: sas;
     font-size: 20.5vw;
     line-height: 19vw;
@@ -595,5 +593,5 @@ hr {
     color: transparent;
     -webkit-text-stroke: 0.5px #ffffff;
     margin-top: 6vw;
+    margin-bottom: 2vw;
 }
-
