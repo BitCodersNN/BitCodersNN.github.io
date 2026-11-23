@@ -1,0 +1,22 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "ru.bitcodersnn.unnstudenthub",
+      "sha256_cert_fingerprints": [
+        "09:F8:DE:49:AF:57:31:66:8D:CA:BE:51:CC:44:CF:18:A7:CD:DE:E6:04:78:7A:79:01:37:3F:5F:A9:59:02:C9"
+      ]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "ru.unn.unn_mobile",
+      "sha256_cert_fingerprints": [
+        "0F:93:64:31:34:75:B7:7C:B1:50:BC:D4:DB:E9:6B:F0:51:6F:D1:EA:AA:15:55:65:F8:FD:DB:AA:3D:7D:9C:A4"
+      ]
+    }
+  }
+]
